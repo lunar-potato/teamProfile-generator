@@ -88,8 +88,68 @@ function promptIntern() {
   ]);
 }
 
-function mainMenu() {}
+function mainMenu() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "choice",
+        message: "Choose an option:",
+        choices: [
+          "Add Manager",
+          " Add Engineer",
+          "Add Intern",
+          "Finish Building Team",
+        ],
+      },
+    ])
+    .then(function (answers) {
+      switch (answers.choice) {
+        case "Add Manager":
+          promptManager().then(function (manager) {
+            const managerObject = new Manager(
+              manager.name,
+              manager.id,
+              manager.email,
+              manager.officeNumber
+            );
+            teamMember.push(managerObject);
+            mainMenu();
+          });
+          break;
 
-function buildTeam() {}
+        case "Add Engineer":
+          promptEngineer().then(function (engineer) {
+            const engineerObject = new Engineer(
+              engineer.name,
+              engineer.id,
+              engineer.email,
+              engineer.github
+            );
+            teamMember.push(engineerObject);
+            mainMenu();
+          });
+          break;
+
+        case "Add Intern":
+          promptIntern().then(function (intern) {
+            const internObject = new Intern(
+              intern.name,
+              intern.id,
+              intern.email,
+              intern.school
+            );
+            teamMember.push(internObject);
+          });
+          break;
+
+        case "Finish Building Team":
+          const html = render(teamMember);
+          fs.writeFileSync(outputPath, html);
+          console.log("Team HTML generated");
+          break;
+      }
+    });
+}
 
 mainMenu();
