@@ -12,3 +12,26 @@ const render = require("./src/page-template.js");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
+const teamMember = []; // Storing the team members 
+
+function promptManager() {
+
+}
+
+function promptEngineer() {
+
+}
+
+function promptIntern() {
+    
+}
+
+function mainMenu() {
+    
+}
+
+function buildTeam() {
+    
+}
+
+mainMenu();
