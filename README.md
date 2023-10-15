@@ -22,6 +22,16 @@ After cloning the repository to your machine and downloading the dependencies ne
 Follow the prompts to add your team members and their roles. After finishing building the team, the application will then generate an HTML located in the **teamMembers** folder/directory. 
 
 ## Screenshots
+Here is a screenshot of how the Team HTML output looks like 
+![Screenshot of Team HTML output](image.png)
+
+<br>
+The prompts looks like this
+
+![Alt text](image-2.png)
+
+![Screenshot of prompts questions](image-1.png)
+
 
 ## Technologies
 This application is written in 
