@@ -10,6 +10,7 @@ const render = require("./src/page-template.js");
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 const teamMember = []; // Storing the team members
 
+// Function prompt for selecting manager
 function promptManager() {
   return inquirer.prompt([
     {
@@ -35,6 +36,7 @@ function promptManager() {
   ]);
 }
 
+// Function prompt for selecting Engineer
 function promptEngineer() {
   return inquirer.prompt([
     {
@@ -60,6 +62,7 @@ function promptEngineer() {
   ]);
 }
 
+// Function prompt for selecting intern
 function promptIntern() {
   return inquirer.prompt([
     {
@@ -85,9 +88,11 @@ function promptIntern() {
   ]);
 }
 
+// Creating variable to redirect path to where team.html is going to be saved
 const folderPath = "./output";
 const outputPath = path.join(folderPath, "team.html");
 
+// Function to show main menu which contain choices to choose to build team, and will then prompt questions according to selected choice. 
 function mainMenu() {
   inquirer
     .prompt([
